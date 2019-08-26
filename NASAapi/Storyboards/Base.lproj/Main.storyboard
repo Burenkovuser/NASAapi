@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Spaice objects-->
         <scene sceneID="SbX-o7-gVA">
             <objects>
                 <tableViewController id="sac-P1-m4d" customClass="ViewController" customModule="NASAapi" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,6 +52,7 @@
                                 <connections>
                                     <outlet property="imageSpace" destination="sDr-n1-KsX" id="BHu-Z9-VQU"/>
                                     <outlet property="nameSpace" destination="ZZg-yA-DLt" id="G4o-dn-abe"/>
+                                    <segue destination="U7m-of-izV" kind="show" identifier="Detail" id="28H-od-ELD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,11 +61,44 @@
                             <outlet property="delegate" destination="sac-P1-m4d" id="Fy8-6O-06l"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="XMc-Ey-eIk"/>
+                    <navigationItem key="navigationItem" title="Spaice objects" id="XMc-Ey-eIk"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7em-2u-h1R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3727.5" y="87.676056338028175"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="eWo-fr-GEh">
+            <objects>
+                <viewController id="U7m-of-izV" customClass="DetailViewController" customModule="NASAapi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hFG-f5-fRS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4oT-Sr-aoW">
+                                <rect key="frame" x="40" y="64" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="omf-d4-45I">
+                                <rect key="frame" x="40" y="220" width="240" height="328"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="d0Z-JL-ic8"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailImage" destination="4oT-Sr-aoW" id="qEA-mq-RDE"/>
+                        <outlet property="detailTextView" destination="omf-d4-45I" id="84c-hO-Q7D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JAA-D5-I1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4582.5" y="81.338028169014081"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZUx-4f-e0H">

@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-     //private let urlNasa = "https://api.nasa.gov/planetary/apod?api_key=IcHp0GqyNEZdp2aTN3hj86LDIu9gFSo2IGRy4ocY"
+     //private let urlNasa = "https://api.nasa.gov/planetary/apod?api_key=NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo"
     
     private let urlNasa = "https://api.nasa.gov/planetary/apod?api_key=IcHp0GqyNEZdp2aTN3hj86LDIu9gFSo2IGRy4ocY"
     
@@ -30,26 +30,22 @@ class ViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return spaceObjects.count
     }
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MainCell
         let spaceObject = spaceObjects[indexPath.row]
         cell.configur(with: spaceObject)
-       // cell.nameSpace.text = spaceObject.title
-        //cell.imageSpace.image = spaceObject.url
-        
-        //cell.nameSpace.text = "star"
     
         return cell
     }
     
 
     
-    private func fetchData() {
+    func fetchData() {
         guard let url = URL(string: urlNasa) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -136,14 +132,24 @@ class ViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /*
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let indexPath = tableView.indexPathForSelectedRow {
+            
+            if segue.identifier == "Detail"{
+            let detailVC = segue.destination as! DetailViewController
+            
+                
+            }
+        
+        }
     }
-    */
+ 
+ */
 
+ 
 }
